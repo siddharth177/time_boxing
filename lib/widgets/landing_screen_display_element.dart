@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time_boxing/screens/current_week_summary_screen.dart';
 
 class LandingScreenElement extends StatefulWidget {
   const LandingScreenElement(this.elementText, this.color, {super.key});
@@ -18,7 +19,14 @@ class _LandingScreenElementState extends State<LandingScreenElement> {
     return Container(
       margin: const EdgeInsets.all(20),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CurrentWeekSummaryScreen(),
+            ),
+          );
+        },
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(20),
           backgroundColor: widget.color,
