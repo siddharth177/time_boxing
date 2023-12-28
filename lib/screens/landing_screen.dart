@@ -58,6 +58,7 @@ class _LandingScreenState extends State<LandingScreen> {
                 onPressed: () {},
                 icon: Icon(
                   Icons.account_box_outlined,
+                  size: 34,
                   color: Theme.of(context).colorScheme.primary,
                 ))
           ],

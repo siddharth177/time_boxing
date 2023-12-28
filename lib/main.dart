@@ -15,8 +15,10 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      darkTheme: kDarkThemeData,
       theme: kThemeData,
       home: LandingScreen(username),
+      themeMode: ThemeMode.system,
     );
   }
 }
