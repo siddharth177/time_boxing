@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:time_boxing/screens/landing_screen.dart';
+import 'package:time_boxing/utils/theming.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +15,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        // colorScheme:
-      ),
+      theme: kThemeData,
       home: LandingScreen(username),
     );
   }
