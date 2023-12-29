@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:time_boxing/widgets/one_day_summary.dart';
+import 'package:time_boxing/widgets/day_top_priority_display_element.dart';
 
-class CurrentWeekSummaryScreen extends StatefulWidget {
-  const CurrentWeekSummaryScreen({super.key});
+class WeeklyPriorityScreen extends StatefulWidget {
+  const WeeklyPriorityScreen({super.key});
 
   @override
-  State<CurrentWeekSummaryScreen> createState() =>
-      _CurrentWeekSummaryScreenState();
+  State<WeeklyPriorityScreen> createState() => _WeeklyPriorityScreenState();
 }
 
-class _CurrentWeekSummaryScreenState extends State<CurrentWeekSummaryScreen> {
+class _WeeklyPriorityScreenState extends State<WeeklyPriorityScreen> {
   List<String> list = getNext7Days();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('AppBarTitle'),
+          title: const Text('Top Priorities'),
         ),
         backgroundColor: Colors.red,
         body: ListView.builder(
           itemCount: list.length,
           scrollDirection: Axis.vertical, // Set horizontal scrolling
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           itemBuilder: (context, index) {
-            return OneDaySummary(list[index]);
+            return DayTopPriorityDisplayElement(list[index]);
           },
         ),
       ),
