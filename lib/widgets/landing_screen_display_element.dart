@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:time_boxing/screens/current_week_summary_screen.dart';
+import 'package:time_boxing/screens/weekly_priority_screen.dart';
 
 class LandingScreenElement extends StatefulWidget {
   const LandingScreenElement(this.elementText, this.color, {super.key});
@@ -23,7 +23,7 @@ class _LandingScreenElementState extends State<LandingScreenElement> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const CurrentWeekSummaryScreen(),
+              builder: (context) => const WeeklyPriorityScreen(),
             ),
           );
         },
