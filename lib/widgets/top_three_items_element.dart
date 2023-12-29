@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:time_boxing/models/DailyPriorities.dart';
+import 'package:time_boxing/temp_files/temp_db.dart';
 
 class DaysPriorityItems extends StatefulWidget {
   const DaysPriorityItems({super.key});
@@ -10,10 +12,11 @@ class DaysPriorityItems extends StatefulWidget {
 class _DaysPriorityItemsState extends State<DaysPriorityItems> {
   @override
   Widget build(BuildContext context) {
+    DailyPriorities dp = getTop3PriorityForDay('1', DateTime.now());
     List<Text> _priorityItems = [];
 
-    for (int i = 0; i < 3; i++) {
-      _priorityItems.add(Text('Top Priority Item $i'));
+    for (var element in dp.priorities) {
+      _priorityItems.add(Text('${element.priorityId}: ${element.description}'));
     }
 
     return Padding(
