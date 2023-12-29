@@ -30,18 +30,26 @@ class _DayTopPriorityDisplayElementState
           const SizedBox(
             height: 5,
           ),
-          Container(
-            width: double.infinity,
-            // margin: const EdgeInsets.fromLTRB(5, 0, 0, 5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.purple, Colors.purple.shade200],
+          InkWell(
+            onTap: () {},
+            onLongPress: () {},
+            splashColor: Colors.green,
+            highlightColor: Colors.blue,
+            hoverColor: Colors.yellow,
+            borderRadius: BorderRadius.circular(20),
+            child: Ink(
+              width: double.infinity,
+              // margin: const EdgeInsets.fromLTRB(5, 0, 0, 5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Colors.purple, Colors.purple.shade200],
+                ),
               ),
+              child: DaysPriorityItems(),
             ),
-            child: DaysPriorityItems(),
           ),
         ],
       ),
